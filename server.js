@@ -21,7 +21,7 @@ app.post('/gallery', function (req, res) {
 
 app.get('/gallery', function (req, res) {
   Gallery.findAll()
-    .then(function () {
+    .then(function (gallery) {
       res.json(gallery);
     });
 });
