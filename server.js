@@ -16,7 +16,6 @@ app.get('/', function (req, res) {
      res.render('gallery', {
         galleries: gallery
      });
-
   }).catch(function (err) {
     res.json({success: false, error: err});
   });

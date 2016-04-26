@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "nat_nat",
+    "username": "stephen",
     "database": "express_gallery",
     "host": "localhost",
     "dialect": "postgres",
-    "password": "nat_nat"
+    "password": "1234"
   },
   "test": {
     "username": "root",
