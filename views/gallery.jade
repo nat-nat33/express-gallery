@@ -1,0 +1,13 @@
+doctype html
+
+block title
+  title
+    |Index
+
+block content
+  ul
+    each gallery in galleries
+      li
+        img(src='#{gallery.link}')
+        p #{gallery.author}
+        p #{gallery.description}

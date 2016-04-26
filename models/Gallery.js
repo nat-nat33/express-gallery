@@ -14,10 +14,14 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     }
   }, {
-      classMethods: {
+    classMethods: {
       associate: function (models) {
         Gallery.belongsTo(models.Gallery);
       }
+    },
+    name: {
+      plural: 'Galleries',
+      singular: 'Gallery'
     }
   });
   return Gallery;

@@ -11,17 +11,27 @@ app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', function (req, res) {
-  res.json({success: true});
+  Gallery.findAll()
+  .then(function (gallery) {
+     res.render('gallery', {
+        galleries: gallery
+     });
+
+  }).catch(function (err) {
+    res.json({success: false, error: err});
+  });
 });
 
-app.use('/photos', galleryRouter);
+app.use('/gallery', galleryRouter);
 
 //jade templating
 app.set('view engine', 'jade');
 app.set('views', './views');
 
 
-app.listen(3000, function() {
-  db.sequelize.sync();
-  console.log('connected to port 3000');
+
+db.sequelize.sync().then(function () {
+  app.listen(3000, function () {
+    console.log('server running on port 3000');
+  });
 });
