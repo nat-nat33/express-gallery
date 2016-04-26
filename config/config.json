@@ -3,7 +3,8 @@
     "username": "nat_nat",
     "database": "express_gallery",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "password": "nat_nat"
   },
   "test": {
     "username": "root",
