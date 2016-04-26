@@ -38,8 +38,6 @@ app.get('/gallery', function (req, res) {
     });
 });
 
-
-
 app.listen(3000, function() {
   db.sequelize.sync();
   console.log('connected to port 3000');
