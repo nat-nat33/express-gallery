@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var Gallery = require('../models').Gallery;
+var bodyParser = require('body-parser');
+router.use(bodyParser.urlencoded({ extended: false }));
+
 
 router.get('/:id/edit', function (req, res){
   Gallery.findById(req.params.id).then(function (gallery) {
@@ -50,11 +53,15 @@ router.route('/')
       link: req.body.link,
       description: req.body.description
     })
-    .then(function () {
+    .then(function (obj) {
+      console.log('success', obj);
       res.redirect('/');
     }).catch(function (err) {
-      res.json({success: false});
+      console.log('false', err);
+      // res.json({success: false});
     });
   });
+
+
 
 module.exports = router;
