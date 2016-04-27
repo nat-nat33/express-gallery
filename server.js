@@ -10,6 +10,9 @@ var galleryRouter = require('./routes/photos');
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.set('view engine', 'jade');
+app.set('views', './views');
+
 app.get('/', function (req, res) {
   Gallery.findAll()
   .then(function (gallery) {
@@ -25,8 +28,6 @@ app.get('/', function (req, res) {
 app.use('/gallery', galleryRouter);
 
 //jade templating
-app.set('view engine', 'jade');
-app.set('views', './views');
 
 
 
