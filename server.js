@@ -10,26 +10,23 @@ var galleryRouter = require('./routes/photos');
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
+//jade templating
 app.set('view engine', 'jade');
 app.set('views', './views');
 
 app.get('/', function (req, res) {
   Gallery.findAll()
   .then(function (gallery) {
+    console.log('poop', gallery);
      res.render('gallery', {
         galleries: gallery
      });
-
   }).catch(function (err) {
     res.json({success: false, error: err});
   });
 });
 
 app.use('/gallery', galleryRouter);
-
-//jade templating
-
-
 
 db.sequelize.sync().then(function () {
   app.listen(3000, function () {

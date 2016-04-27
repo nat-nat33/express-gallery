@@ -1,11 +1,12 @@
-form(method="POST", action='//#{.}/edit?_method=PUT')
-  input(type='text', name='author', placeholder='...', value='#{.}')
-  br
-  input(type='text', name='link', placeholder='...', value='#{.}')
-  br
-  input(type='textarea', rows='2' cols='100' name='description', placeholder='...', value='#{.}')
-  br
-  input(type='submit', value='SAVE')
-form(method="POST", action='//#{.}?_method=DELETE')
-  br
-  input(type='submit', value='DELETE')
+block title
+  title Edit Gallery
+
+block content
+  h1 Gallery
+  div(id='container')
+    img(src='#{gallery.link}')
+    form(method="POST", action="/gallery/#{gallery.id}?_method=PUT")
+      input(placeholder='Image link', name ='link')
+      input(value='#{gallery.author}', name='author', placeholder='#{gallery.author}')
+      input(type='text', value='#{gallery.description}', name ='description', placeholder='#{gallery.description}')
+      button UPDATE
