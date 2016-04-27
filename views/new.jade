@@ -1,12 +1,9 @@
-doctype html
+block content
+  h1 New Gallery
+  div(id='container')
+    form(method="POST", action="/gallery/")
+      input(name ='url', placeholder='Image url')
+      input(name='author', placeholder='author')
+      input(name ='description', placeholder='Image description', type='text')
+      button POST
 
-h1 | _ARCHITEKT
-
-form(action="/gallery" method="POST")
-  | Author
-    input(type='text', name='author', placeholder='...')br
-  | Link
-    input(type='text', name='link', placeholder='...')br
-  | Description
-    input(type='textarea' rows='2' cols='100' name='description' placeholder='...')br
-  input(type='submit', value='POST')

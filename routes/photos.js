@@ -12,7 +12,8 @@ router.get('/:id/edit', function (req, res){
 });
 
 router.get('/new', function (req, res) {
-  res.json({success: true});
+  console.log('new here', req);
+  res.render('new');
 });
 
 router.route('/:id')
@@ -47,7 +48,6 @@ router.route('/:id')
 
 router.route('/')
   .post(function (req, res) {
-    console.log('here', req.body);
     Gallery.create({
       author: req.body.author,
       link: req.body.link,
