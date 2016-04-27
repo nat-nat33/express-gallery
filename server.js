@@ -1,7 +1,6 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-// var methodOverride = require('method-override');
 var db = require('./models');
 var Gallery = db.Gallery;
 var galleryRouter = require('./routes/photos');

@@ -19,6 +19,7 @@ router.route('/:id')
     });
   })
   .put(function (req, res) {
+    console.log('req.body', req.body);
     Gallery.update({
       author: req.body.author,
       link: req.body.link,
@@ -32,12 +33,13 @@ router.route('/:id')
     });
   })
   .delete(function (req, res) {
-    Gallery.destory({
+    console.log('here', req.body);
+    Gallery.destroy({
       where: {
         id: req.params.id
       }
     }).then(function () {
-      res.json({success: true});
+      res.json({success: true, redirect: '/gallery'});
     });
   });
 
