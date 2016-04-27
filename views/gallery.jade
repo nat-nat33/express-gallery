@@ -1,18 +1,25 @@
 doctype html
 
-block title
-  title
-    |Gallery Index
+html
+  head
+    link(rel="stylesheet" type="text" href="/css/styles.css")
+    title
+      |Gallery Index
 
-block content
 
-button Login
-button Register
+    h1 _ARCHITEKT
 
-  ul
-    each gallery in galleries
-      li
-        img(src='#{gallery.link}')
-        p #{gallery.author}
-        p #{gallery.description}
+
+  #buttons
+    button Login
+    button Register
+
+  div.flexcontainer
+    ul
+      each gallery in galleries
+        li
+          div.flex-item
+          img(src='#{gallery.link}')
+          p #{gallery.author}
+          p #{gallery.description}
 

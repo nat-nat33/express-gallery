@@ -1,0 +1,18 @@
+body {
+  background-color: white; }
+
+.flexcontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: row-wrap; }
+
+img {
+  height: 25%;
+  width: 25%; }
+
+h1 {
+  color: gray; }
+
+ul {
+  list-style-type: none; }

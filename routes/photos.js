@@ -44,10 +44,8 @@ router.route('/:id')
     });
   });
 
-
 router.route('/')
   .post(function (req, res) {
-    console.log('poop', req.body);
     Gallery.create({
       author: req.body.author,
       link: req.body.link,
@@ -59,7 +57,5 @@ router.route('/')
         res.json({success: false});
     });
   });
-
-
 
 module.exports = router;
