@@ -1,11 +1,8 @@
-h1
-  | _Architekt
+extends ./layouts/main
 
-button Post New
-button Log In
-
-div
-  each gallery in galleries
-    img(src="http://" + photo.url)
-    p | gallery.title
-    p | gallery.description
+block content
+  div
+    each gallery in galleries
+      img(src="http://" + photo.url)
+      p | gallery.title
+      p | gallery.description
