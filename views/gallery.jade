@@ -5,9 +5,14 @@ block title
     |Index
 
 block content
+
+button |login
+button |Register
+
   ul
     each gallery in galleries
       li
         img(src='#{gallery.link}')
         p #{gallery.author}
         p #{gallery.description}
+

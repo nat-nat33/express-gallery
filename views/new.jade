@@ -1,6 +1,8 @@
 doctype html
 
-h1 | _ARCHITEKT
+block title
+  title
+    |New Photo
 
 form(action="/gallery" method="POST")
   | Author
@@ -8,5 +10,5 @@ form(action="/gallery" method="POST")
   | Link
     input(type='text', name='link', placeholder='...')br
   | Description
-    input(type='textarea' rows='2' cols='100' name='description' placeholder='...')br
+    input(type='text' rows='2' cols='100' name='description' placeholder='...')br
   input(type='submit', value='POST')

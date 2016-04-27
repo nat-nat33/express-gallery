@@ -1,2 +1,10 @@
 doctype html
 
+block title
+  title
+    |Photo
+  ul
+    li
+      img(src='#{gallery.link}')
+        p #{gallery.author}
+        p #{gallery.description}

@@ -47,18 +47,15 @@ router.route('/:id')
 
 router.route('/')
   .post(function (req, res) {
-    console.log('here', req.body);
     Gallery.create({
       author: req.body.author,
       link: req.body.link,
       description: req.body.description
     })
-    .then(function (obj) {
-      console.log('success', obj);
+    .then(function () {
       res.redirect('/');
     }).catch(function (err) {
-      console.log('false', err);
-      // res.json({success: false});
+        res.json({success: false});
     });
   });
 
