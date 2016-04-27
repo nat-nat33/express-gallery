@@ -9,17 +9,17 @@ html
 
     h1 _ARCHITEKT
 
+  body
+    #buttons
+      button Login
+      button Register
 
-  #buttons
-    button Login
-    button Register
-
-  div.flexcontainer
-    ul
-      each gallery in galleries
-        li
-          div.flex-item
-          img(src='#{gallery.link}')
-          p #{gallery.author}
-          p #{gallery.description}
+    div(class=flex-container)
+      ul
+        each gallery in galleries
+          li
+            div(class=flex-item)
+              img(src='#{gallery.link}')
+              p #{gallery.author}
+              p #{gallery.description}
 

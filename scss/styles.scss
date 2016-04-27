@@ -6,11 +6,16 @@ body {
   background-color: $color;
 }
 
-.flexcontainer{
+.flex-container{
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-around;
-  flex-flow: row-wrap;
+}
+
+.flex-item {
+  width: 200px;
+  height: 150px;
+  padding: 5px;
 }
 
 img {
