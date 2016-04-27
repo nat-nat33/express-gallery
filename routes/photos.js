@@ -7,12 +7,11 @@ router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get('/:id/edit', function (req, res){
   Gallery.findById(req.params.id).then(function (gallery) {
-    res.json({success: true});
+    res.render('edit');
   });
 });
 
 router.get('/new', function (req, res) {
-  console.log('new here', req);
   res.render('new');
 });
 
@@ -48,6 +47,7 @@ router.route('/:id')
 
 router.route('/')
   .post(function (req, res) {
+    console.log('poop', req.body);
     Gallery.create({
       author: req.body.author,
       link: req.body.link,
