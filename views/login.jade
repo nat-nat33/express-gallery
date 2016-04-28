@@ -1,8 +1,9 @@
-doctype html
+extends ./layouts/main
 
 block title
   title Login
 
+block content
   form(method="POST", action="/login")
     input(name="username", placeholder="...")
     input(name="password", type="password", placeholder="...")
