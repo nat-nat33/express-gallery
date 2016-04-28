@@ -27,12 +27,12 @@ gulp.task('browser-sync', ['nodemon'], function() {
     proxy : 'http://localhost:3000',
     files : ['public/**/*.*'],
     browser : 'google chrome',
-    port : 8000
+    port : 7000
   });
 });
 
 gulp.task('sass', function () {
-  return gulp.src('./sass/*.scss')
+  return gulp.src('./scss/*.scss')
       .pipe(sass({
         errLogToConsole : true,
         sourceComments : true,
@@ -43,9 +43,8 @@ gulp.task('sass', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('./sass/**/*.scss', ['sass']);
+  gulp.watch('./scss/**/*.scss', ['sass']);
   gulp.watch('./public/**/*.*').on('change', reload);
 });
 
 gulp.task('default', ['watch', 'sass', 'browser-sync']);
-
