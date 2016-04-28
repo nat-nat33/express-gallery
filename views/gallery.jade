@@ -14,11 +14,10 @@ html
       button Login
       button Register
 
-    div(class=flex-container)
-      ul
+      ul(class="flex-container")
         each gallery in galleries
-          li
-            div(class=flex-item)
+          li(class="flex-item")
+            div(class="photo-container")
               img(src='#{gallery.link}')
               p #{gallery.author}
               p #{gallery.description}
