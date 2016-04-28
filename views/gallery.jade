@@ -1,10 +1,12 @@
 extends ./layouts/main
 
 block content
-  button Post New
-  ul
-    each gallery in galleries
-      li
-        img(src='#{gallery.link}')
-        p #{gallery.author}
-        p #{gallery.description}
+  div(id="galleryContainer")
+    button.post Post New
+    ul(class="flex-container")
+      each gallery in galleries
+        li(class="flex-item")
+          img(src='#{gallery.link}')
+          p #{gallery.author}
+          p #{gallery.link}
+          p #{gallery.description}
