@@ -5,7 +5,6 @@ var db = require('./models');
 var Gallery = db.Gallery;
 var galleryRouter = require('./routes/photos');
 
-
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -16,7 +15,6 @@ app.set('views', './views');
 app.get('/', function (req, res) {
   Gallery.findAll()
   .then(function (gallery) {
-    console.log('poop', gallery);
      res.render('gallery', {
         galleries: gallery
      });

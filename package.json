@@ -19,8 +19,14 @@
   "homepage": "https://github.com/nat-nat33/express-gallery#readme",
   "dependencies": {
     "express": "^4.13.4",
+    "jade": "^1.11.0",
     "pg": "^4.5.3",
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.21.0"
+  },
+  "devDependencies": {
+    "gulp-connect": "^3.2.3",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-sass": "^2.3.1"
   }
 }

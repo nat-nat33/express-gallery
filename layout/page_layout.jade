@@ -1,6 +1,11 @@
 doctype html
 html
   head
-    link(rel='stylesheet' href='/css/styles.css')
-    title Express Gallery
+    title _ARCHITEKT
   body
+    block content
+
+    extends ./gallery.jade
+    extends ./edit.jade
+    extends ./new.jade
+    title Express Gallery

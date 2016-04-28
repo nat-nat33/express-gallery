@@ -1,0 +1,49 @@
+$color: white;
+$title: gray;
+$clicks: 3399FF;
+$font: Helvetica;
+
+body {
+  background-color: $color;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.flex-item {
+  width: 200px;
+  height: 150px;
+  padding: 15px;
+}
+
+.photo-container {
+  margin-bottom: 20px;
+}
+
+img {
+  position: relative;
+  // float: left;
+  width:  200px;
+  height: 200px;
+  //background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: $title;
+  font-family: $font;
+}
+
+ul {
+  list-style-type: none;
+}
+
