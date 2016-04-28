@@ -4,7 +4,7 @@ var Gallery = require('../models').Gallery;
 
 router.get('/:id/edit', function (req, res){
   Gallery.findById(req.params.id).then(function (gallery) {
-    res.render('edit');
+    res.render('edit', {gallery: gallery});
   });
 });
 

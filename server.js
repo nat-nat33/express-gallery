@@ -16,7 +16,6 @@ app.set('views', './views');
 app.get('/', function (req, res) {
   Gallery.findAll()
   .then(function (gallery) {
-    console.log('poop', gallery);
      res.render('gallery', {
         galleries: gallery
      });
