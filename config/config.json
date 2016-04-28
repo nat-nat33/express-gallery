@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "nat_nat",
+    "username": "stephen",
     "database": "express_gallery",
     "host": "localhost",
     "dialect": "postgres",

@@ -3,6 +3,8 @@ extends ./layouts/main
 block content
   div(id="galleryContainer")
     button.post Post New
+    a(href="/logout")
+      button.post Logout
     ul(class="flex-container")
       each gallery in galleries
         li(class="flex-item")

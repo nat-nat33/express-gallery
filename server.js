@@ -1,21 +1,20 @@
 var express = require('express');
 var app = express();
-//passports
-var passport = require('passport');
-
-var session = require('express-session');
-
-var localStrategy = require('passport-local').Strategy;
-
 var bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({extended: true}));
 
 var db = require('./models');
 var Gallery = db.Gallery;
 var galleryRouter = require('./routes/photos');
-
+var loginRoute = require('./routes/login');
+var passport = require('passport');
+var session = require('express-session');
+var localStrategy = require('passport-local').Strategy;
 var CONFIG = require('./config/config.json');
 
+app.set('view engine', 'jade');
+app.set('views', './views');
+
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
   resave: true,
   saveUnintialized: true,
@@ -32,7 +31,7 @@ passport.use(new localStrategy(
     var PASSWORD = CONFIG.session_auth.password;
 
     if (!(username === USERNAME && password === PASSWORD)){
-      return done(null, user);
+      return done(null, false);
     }
     var user = {
       name: USERNAME
@@ -48,9 +47,8 @@ passport.deserializeUser(function(user, done){
   return done(null, user);
 });
 
-//jade templating
-app.set('view engine', 'jade');
-app.set('views', './views');
+app.use('/gallery', galleryRouter);
+app.use('/login', loginRoute);
 
 app.get('/', function (req, res) {
   Gallery.findAll()
@@ -63,13 +61,22 @@ app.get('/', function (req, res) {
   });
 });
 
-app.use('/gallery', galleryRouter);
+function isAuthenticated(req, res, next){
+  console.log('here!', req.isAuthenticated());
+  if(!req.isAuthenticated()){
+    return res.redirect('/login');
+  }
+  return next();
+}
 
-app.get('/login', function(req, res){
-  res.render('login');
+app.get('/gallery', isAuthenticated, function(req, res){
+  res.render('gallery');
 });
 
-
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/login');
+});
 
 db.sequelize.sync().then(function () {
   app.listen(3000, function () {
