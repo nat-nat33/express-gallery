@@ -1,3 +1,5 @@
+extends ./layouts/main
+
 block title
   title Edit Gallery
 
@@ -6,11 +8,8 @@ block content
   div(id='container')
     img(src='#{gallery.link}')
     form(method="POST", action="/gallery/#{gallery.id}?_method=PUT")
-      input(placeholder='Image link', name ='link')
       input(value='#{gallery.author}', name='author', placeholder='#{gallery.author}')
+      input(placeholder='Image link', name ='link')
       input(type='text', value='#{gallery.description}', name ='description', placeholder='#{gallery.description}')
-<<<<<<< HEAD
-      button EDIT
-=======
-      button UPDATE
->>>>>>> templates
+      button SAVE
+      button DELETE

@@ -1,8 +1,1 @@
 extends ./layouts/main
-
-block content
-  div
-    each gallery in galleries
-      img(src="http://" + photo.url)
-      p | gallery.title
-      p | gallery.description

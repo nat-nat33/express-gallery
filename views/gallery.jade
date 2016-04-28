@@ -1,38 +1,10 @@
 extends ./layouts/main
 
-<<<<<<< HEAD
-block title
-  title
-    |Gallery Image
-
 block content
+  button Post New
   ul
     each gallery in galleries
       li
         img(src='#{gallery.link}')
         p #{gallery.author}
         p #{gallery.description}
-=======
-html
-  head
-    link(rel="stylesheet" type="text" href="/css/styles.css")
-    title
-      |Gallery Index
-
-
-    h1 _ARCHITEKT
-
-  body
-    #buttons
-      button Login
-      button Register
-
-      ul(class="flex-container")
-        each gallery in galleries
-          li(class="flex-item")
-            div(class="photo-container")
-              img(src='#{gallery.link}')
-              p #{gallery.author}
-              p #{gallery.description}
-
->>>>>>> templates
