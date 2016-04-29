@@ -4,7 +4,6 @@ var passport = require('passport');
 
 router.route('/')
   .get(function(req, res) {
-    console.log('test');
     res.render('login');
   })
   .post(passport.authenticate('local', {

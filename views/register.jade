@@ -1,0 +1,11 @@
+extends ./layouts/main
+
+block title
+  title Register
+
+block content
+  form(method="POST" action="/register")
+    input(name='username' placeholder='username' required autofocus)
+    input(name='password' type='password' placeholder='password' required)
+    input(name='password2' type='password' placeholder='password' required)
+    button Register
