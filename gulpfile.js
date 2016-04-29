@@ -1,11 +1,21 @@
 'use strict';
 
-const gulp        = require('gulp');
-const sass        = require('gulp-sass');
-const nodemon     = require('gulp-nodemon');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const nodemon = require('gulp-nodemon');
 const browserSync = require('browser-sync');
-const reload      = browserSync.reload;
-const pkg           = require('./package.json');
+const reload = browserSync.reload;
+const pkg = require('./package.json');
+const os = require('os');
+
+var oSystem;
+
+if (os.type() === 'Linux'){
+  oSystem = 'google-chrome';
+}
+else {
+  oSystem = 'google chrome';
+}
 
 gulp.task('nodemon', function (cb) {
 
@@ -26,7 +36,7 @@ gulp.task('browser-sync', ['nodemon'], function() {
   browserSync.init(null, {
     proxy : 'http://localhost:3000',
     files : ['public/**/*.*'],
-    browser : 'google chrome',
+    browser : oSystem,
     port : 7000
   });
 });
