@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "dev": "gulp"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "sequelize": "^3.21.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.12.5",
     "gulp-connect": "^3.2.3",
     "gulp-nodemon": "^2.0.6",
     "gulp-sass": "^2.3.1"
