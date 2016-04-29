@@ -12,6 +12,7 @@ router.get('/:id/edit', function (req, res){
 });
 
 router.get('/new', function (req, res) {
+  console.log('new', req.body);
   res.render('new');
 });
 
