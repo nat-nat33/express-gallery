@@ -5,13 +5,6 @@ var bodyParser = require('body-parser');
 
 router.use(bodyParser.urlencoded({ extended: false }));
 
-function isAuthenticated(req, res, next){
-  if(!req.isAuthenticated()){
-    return res.redirect('/gallery');
-  }
-  return next();
-}
-
 router.get('/:id/edit', function (req, res){
   Gallery.findById(req.params.id).then(function (gallery) {
     res.render('edit', {gallery: gallery});
