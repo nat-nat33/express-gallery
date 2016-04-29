@@ -18,8 +18,8 @@ router.get('/new', function (req, res) {
 
 router.route('/:id')
   .get(function (req, res){
-    Gallery.findById(req.params.id).then(function () {
-      res.json({success: true});
+    Gallery.findById(req.params.id).then(function (photo) {
+      res.render('photo', {photo: photo});
     });
   })
   .put(function (req, res) {
