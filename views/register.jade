@@ -2,6 +2,7 @@ extends ./layouts/main
 
 block content
   form(method="POST", action="/register")
+    .row
     input(name='username', placeholder='username', required autofocus)
     input(name='password', type='password', placeholder='password' required)
     input(name='password2', type='password', placeholder='password' required)
