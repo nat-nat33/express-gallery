@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var bcrypt = require('bcrypt');
 
 var db = require('./models');
 var User = db.User;
@@ -27,15 +28,24 @@ app.use(express.static('./public'));
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new localStrategy(
-  function(username, password, done){
-    User.findOne({where: {username: username}})
-    .then(function (user) {
-      if (!(username === user.dataValues.username && password === user.dataValues.password)){
-        return done(null, false);
+
+passport.use(new localStrategy(function (username, password, done) {
+  User.findOne({where: {username: username}})
+  .then(function (user) {
+    if(!user) {
+      return done(null, false);
+    }
+    bcrypt.compare(password, user.password, function (err, res) {
+      if(res === true) {
+        return done(null, user);
+      } else {
+        return done(null, false, {message: "Invalid password"});
       }
-      return done(null, user);
-   });
+    });
+  })
+  .catch(function (err) {
+    return done(err);
+  });
 }));
 
 passport.serializeUser(function(user, done){
@@ -53,11 +63,9 @@ app.use('/register', registerRoute);
 app.get(/\/(gallery)?/, function (req, res) {
   Gallery.findAll()
   .then(function (gallery) {
-    console.log('poop', req.isAuthenticated());
-    console.log('here', req.user);
-     res.render('gallery', {
+    res.render('gallery', {
         galleries: gallery,
-        loggedIn: req.isAuthenticated()
+        loggedIn: req.user
      });
   }).catch(function (err) {
     res.json({success: false, error: err});
@@ -65,7 +73,6 @@ app.get(/\/(gallery)?/, function (req, res) {
 });
 
 function isAuthenticated(req, res, next){
-  console.log('here!', req.isAuthenticated());
   if(!req.isAuthenticated()){
     return res.redirect('/login');
   }

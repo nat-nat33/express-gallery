@@ -1,10 +1,10 @@
 var express = require('express');
 var passport = require('passport');
 var router = express.Router();
-// var bcrypt = require('bcrypt');
+var bcrypt = require('bcrypt');
 var User = require('../models').User;
 
-// var saltRounds = 10;
+var saltRounds = 10;
 
 var User = require('../models').User;
 
@@ -25,10 +25,11 @@ router.route('/')
         req.flash('error', 'User already exists, please Log In');
         return res.redirect('/register');
       } else {
-        // bcrypt.hash(newUser.password, saltRounds, function(err, hash){
+        bcrypt.hash(newUser.password, saltRounds, function(err, hash){
+          console.log('hash', hash);
           User.create({
             username: newUser.username,
-            password: newUser.password
+            password: hash
           })
           .then(function(user){
             req.login(user, function(err) {
@@ -38,7 +39,7 @@ router.route('/')
               return res.redirect('/gallery');
             });
           });
-        // });
+        });
       }
     });
   });

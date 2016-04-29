@@ -3,34 +3,30 @@ $title: gray;
 $clicks: 3399FF;
 $font: Helvetica;
 $button: #008CBA;
-
 html
 body {
   background-color: $color;
   width: 100%;
   margin: 0 auto;
 }
-
-#galleryContainer{
+#navbar{
   margin-left: 10%;
   margin-right: 10%;
 }
-
 .flex-container{
   list-style-type: none;
   display: flex;
   flex-flow: row wrap;
+  margin-left: 10%;
+  margin-right: 10%;
 }
-
 .flex-item {
   padding: 12px;
 }
-
 .photo-container {
   margin-bottom: 20px;
 }
-
-.post{
+.regular{
   margin-right: 5%;
   margin-left: 5%;
   background-color: $button;
@@ -40,26 +36,22 @@ body {
   color: #FFF;
   font-size: 12px;
 }
-
 p{
   display: flex;
+  width: 250px;
 }
-
 img {
   width:  250px;
   height: 250px;
   background-size: cover;
 }
-
 .title {
   font-size: 65px;
 }
-
 a{
   text-decoration: none;
   color: $title;
 }
-
 #headerContainer{
   color: $title;
   font-family: $font;
@@ -68,15 +60,12 @@ a{
   margin-right: 15%;
   margin-top: 5%;
 }
-
 #header-col-left{
   text-align: left;
 }
-
 #header-col-right{
   padding: 10px;
   margin-left: 40px;
   text-align: right;
   font-size: 12px;
 }
-
