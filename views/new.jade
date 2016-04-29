@@ -1,9 +1,8 @@
 extends ./layouts/main
 
 block content
-    form(method="POST", action="/gallery/")
-      .row
-      input(name ='link', placeholder='Image link')
-      input(name='author', placeholder='author')
-      input(name ='description', placeholder='Image description', type='text')
-      button POST
+  form(method="POST", action="/gallery/")
+    input(name ='link', placeholder='Image link')
+    input(name='author', placeholder='author')
+    input(name ='description', placeholder='Image description', type='text')
+    button POST
