@@ -3,9 +3,11 @@ var app = express();
 var bodyParser = require('body-parser');
 
 var db = require('./models');
+var User = db.User;
 var Gallery = db.Gallery;
 var galleryRouter = require('./routes/photos');
 var loginRoute = require('./routes/login');
+var registerRoute = require('./routes/register');
 var passport = require('passport');
 var session = require('express-session');
 var localStrategy = require('passport-local').Strategy;
@@ -27,16 +29,13 @@ app.use(passport.session());
 
 passport.use(new localStrategy(
   function(username, password, done){
-    var USERNAME = CONFIG.session_auth.username;
-    var PASSWORD = CONFIG.session_auth.password;
-
-    if (!(username === USERNAME && password === PASSWORD)){
-      return done(null, false);
-    }
-    var user = {
-      name: USERNAME
-    };
-    return done(null, user);
+    User.findOne({where: {username: username}})
+    .then(function (user) {
+      if (!(username === user.dataValues.username && password === user.dataValues.password)){
+        return done(null, false);
+      }
+      return done(null, user);
+   });
 }));
 
 passport.serializeUser(function(user, done){
@@ -49,12 +48,16 @@ passport.deserializeUser(function(user, done){
 
 app.use('/gallery', galleryRouter);
 app.use('/login', loginRoute);
+app.use('/register', registerRoute);
 
 app.get(/\/(gallery)?/, function (req, res) {
   Gallery.findAll()
   .then(function (gallery) {
+    console.log('poop', req.isAuthenticated());
+    console.log('here', req.user);
      res.render('gallery', {
-        galleries: gallery
+        galleries: gallery,
+        loggedIn: req.isAuthenticated()
      });
   }).catch(function (err) {
     res.json({success: false, error: err});

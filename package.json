@@ -29,6 +29,7 @@
     "sequelize": "^3.21.0"
   },
   "devDependencies": {
+    "bcrypt": "^0.8.6",
     "browser-sync": "^2.12.5",
     "gulp-connect": "^3.2.3",
     "gulp-nodemon": "^2.0.6",
