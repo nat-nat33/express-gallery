@@ -50,7 +50,7 @@ passport.deserializeUser(function(user, done){
 app.use('/gallery', galleryRouter);
 app.use('/login', loginRoute);
 
-app.get('/', function (req, res) {
+app.get(/\/(gallery)?/, function (req, res) {
   Gallery.findAll()
   .then(function (gallery) {
      res.render('gallery', {
