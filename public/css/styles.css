@@ -6,7 +6,7 @@ body {
   margin: 0 auto; }
 
 /* line 14, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
-#galleryContainer {
+#navbar {
   margin-left: 10%;
   margin-right: 10%; }
 
@@ -14,18 +14,20 @@ body {
 .flex-container {
   list-style-type: none;
   display: flex;
-  flex-flow: row wrap; }
+  flex-flow: row wrap;
+  margin-left: 10%;
+  margin-right: 10%; }
 
-/* line 25, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 27, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 .flex-item {
   padding: 12px; }
 
-/* line 29, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 31, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 .photo-container {
   margin-bottom: 20px; }
 
-/* line 33, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
-.post {
+/* line 35, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+.regular {
   margin-right: 5%;
   margin-left: 5%;
   background-color: #008CBA;
@@ -35,26 +37,27 @@ body {
   color: #FFF;
   font-size: 12px; }
 
-/* line 44, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 46, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 p {
-  display: flex; }
+  display: flex;
+  width: 250px; }
 
-/* line 48, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 51, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 img {
   width: 250px;
   height: 250px;
   background-size: cover; }
 
-/* line 54, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 57, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 .title {
   font-size: 65px; }
 
-/* line 58, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 61, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 a {
   text-decoration: none;
   color: gray; }
 
-/* line 63, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 66, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 #headerContainer {
   color: gray;
   font-family: Helvetica;
@@ -63,11 +66,11 @@ a {
   margin-right: 15%;
   margin-top: 5%; }
 
-/* line 72, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 75, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 #header-col-left {
   text-align: left; }
 
-/* line 76, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 79, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 #header-col-right {
   padding: 10px;
   margin-left: 40px;
