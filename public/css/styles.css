@@ -3,14 +3,15 @@ html
 body {
   background-color: #fff;
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  font-family: Helvetica; }
 
-/* line 12, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 13, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
 #navbar {
   margin-left: 10%;
   margin-right: 10%; }
 
-/* line 16, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 17, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
 .flex-container {
   list-style-type: none;
   display: flex;
@@ -18,15 +19,15 @@ body {
   margin-left: 10%;
   margin-right: 10%; }
 
-/* line 23, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 24, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
 .flex-item {
   padding: 12px; }
 
-/* line 26, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 27, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
 .photo-container {
   margin-bottom: 20px; }
 
-/* line 29, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 30, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
 .regular {
   margin-right: 5%;
   margin-left: 5%;
@@ -37,31 +38,35 @@ body {
   color: #FFF;
   font-size: 12px; }
 
-/* line 40, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
-.regForm {
-  background-color: red; }
-
-/* line 44, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 41, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
 p {
   display: flex;
   width: 250px; }
 
-/* line 48, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 45, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
 img {
   width: 250px;
   height: 250px;
   background-size: cover; }
 
-/* line 53, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 50, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
 .title {
   font-size: 65px; }
 
-/* line 56, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 53, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
 a {
   text-decoration: none;
   color: gray; }
 
-/* line 60, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 58, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+.register {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 50%; }
+
+/* line 70, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
 #headerContainer {
   color: gray;
   font-family: Helvetica;
@@ -70,11 +75,11 @@ a {
   margin-right: 15%;
   margin-top: 5%; }
 
-/* line 68, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 78, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
 #header-col-left {
   text-align: left; }
 
-/* line 71, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 81, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
 #header-col-right {
   padding: 10px;
   margin-left: 40px;
