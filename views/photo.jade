@@ -1,13 +1,24 @@
-doctype html
+extends ./layouts/main
 
 block title
   title
     |Photo
-  ul
-    li
-      img(src='#{photo.link}')
-      p #{photo.author}
-      p #{photo.description}
 
-  button Delete
-  button Edit
+block content
+  div(id="single-main")
+    ul.single-list
+      li.single-item
+        h3 #{photo.author}
+        img(class="single-image" id="#{photo.id}" src="#{photo.link}")
+        p #{photo.link}
+        p #{photo.description}
+    button.big EDIT
+
+  div(id="sideDivMain")
+    ul.side-container
+      each photo in photos
+        li.sideStuff
+          a(class="sideImage" href="/gallery/#{photo.id}")
+           img(class="gallery-images" src="#{photo.link}")
+          p #{photo.description}
+

@@ -17,9 +17,29 @@ router.get('/new', function (req, res) {
 });
 
 router.route('/:id')
-  .get(function (req, res){
-    Gallery.findById(req.params.id).then(function (photo) {
-      res.render('photo', {photo: photo});
+   .get(function (req, res) {
+    console.log("poop");
+    Gallery.findAll()
+    .then(function (photos) {
+      var photo;
+      for(var i = 0; i < photos.length; i++) {
+        if(photos[i].id.toString() === req.params.id) {
+          photo = photos.splice(i, 1)[0];
+          break;
+        }
+      }
+      if(!photo) {
+        console.log("test");
+        return res.json({success: false});
+      }
+      res.render('photo', {
+          photo: photo,
+          photos: photos.slice(0,3)
+       });
+    })
+    .catch(function (err) {
+      console.log("blahblah");
+      res.json({success : false, err: err});
     });
   })
   .put(function (req, res) {
