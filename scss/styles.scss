@@ -52,17 +52,24 @@ body {
   margin-bottom: 20px;
 }
 p{
-  display: flex;
+  word-wrap: break-word;
   width: 250px;
 }
 a{
   text-decoration: none;
   color: $title;
 }
+
+#navLink{
+  width: 0;
+  height: 0;
+}
+
 .single-list{
   list-style-type: none;
   display: flex;
   flex-flow: row wrap;
+  word-wrap: break-word;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -71,6 +78,11 @@ a{
   height: 350px;
   background-size: cover;
 }
+
+.singleInfo{
+  width: 540px;
+}
+
 #single-main{
   display: inline-block;
 }
@@ -81,6 +93,7 @@ a{
   margin-right:15%;
 }
 .side-container{
+  word-wrap: break-word;
   list-style-type: none;
 }
 .regular{

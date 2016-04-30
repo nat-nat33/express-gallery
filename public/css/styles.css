@@ -58,7 +58,7 @@ body {
 
 /* line 54, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
 p {
-  display: flex;
+  word-wrap: break-word;
   width: 250px; }
 
 /* line 58, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
@@ -66,36 +66,71 @@ a {
   text-decoration: none;
   color: #777; }
 
+<<<<<<< HEAD
 /* line 62, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+=======
+/* line 75, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+#navLink {
+  width: 0;
+  height: 0; }
+
+/* line 80, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+>>>>>>> ae2d55681b2de7cec458f47dda21b97419855a68
 .single-list {
   list-style-type: none;
   display: flex;
   flex-flow: row wrap;
+  word-wrap: break-word;
   margin-left: 10%;
   margin-right: 10%; }
 
+<<<<<<< HEAD
 /* line 69, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+=======
+/* line 89, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+>>>>>>> ae2d55681b2de7cec458f47dda21b97419855a68
 .single-image {
   width: 540px;
   height: 350px;
   background-size: cover; }
 
+<<<<<<< HEAD
 /* line 74, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
 #single-main {
   display: inline-block; }
 
 /* line 77, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+=======
+/* line 95, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+.singleInfo {
+  width: 540px; }
+
+/* line 99, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+#single-main {
+  display: inline-block; }
+
+/* line 103, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+>>>>>>> ae2d55681b2de7cec458f47dda21b97419855a68
 #sideDivMain {
   display: flex;
   float: right;
   margin-top: 5%;
   margin-right: 15%; }
 
+<<<<<<< HEAD
 /* line 83, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+=======
+/* line 110, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+>>>>>>> ae2d55681b2de7cec458f47dda21b97419855a68
 .side-container {
+  word-wrap: break-word;
   list-style-type: none; }
 
+<<<<<<< HEAD
 /* line 86, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+=======
+/* line 115, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+>>>>>>> ae2d55681b2de7cec458f47dda21b97419855a68
 .regular {
   margin-right: 5%;
   margin-left: 5%;
@@ -106,7 +141,11 @@ a {
   color: #FFF;
   font-size: 12px; }
 
+<<<<<<< HEAD
 /* line 96, /home/stephen/Desktop/DevLeague/express-gallery/scss/styles.scss */
+=======
+/* line 126, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+>>>>>>> ae2d55681b2de7cec458f47dda21b97419855a68
 .big {
   margin-right: 5%;
   margin-left: 13%;
