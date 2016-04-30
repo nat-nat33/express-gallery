@@ -63,7 +63,7 @@ body {
 }
 
 p{
-  display: flex;
+  word-wrap: break-word;
   width: 250px;
 }
 
@@ -72,10 +72,16 @@ a{
   color: $title;
 }
 
+#navLink{
+  width: 0;
+  height: 0;
+}
+
 .single-list{
   list-style-type: none;
   display: flex;
   flex-flow: row wrap;
+  word-wrap: break-word;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -84,6 +90,10 @@ a{
   width: 540px;
   height: 350px;
   background-size: cover;
+}
+
+.singleInfo{
+  width: 540px;
 }
 
 #single-main{
@@ -98,6 +108,7 @@ a{
 }
 
 .side-container{
+  word-wrap: break-word;
   list-style-type: none;
 }
 

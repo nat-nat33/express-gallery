@@ -58,7 +58,7 @@ body {
 
 /* line 65, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 p {
-  display: flex;
+  word-wrap: break-word;
   width: 250px; }
 
 /* line 70, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
@@ -67,35 +67,46 @@ a {
   color: #777; }
 
 /* line 75, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+#navLink {
+  width: 0;
+  height: 0; }
+
+/* line 80, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 .single-list {
   list-style-type: none;
   display: flex;
   flex-flow: row wrap;
+  word-wrap: break-word;
   margin-left: 10%;
   margin-right: 10%; }
 
-/* line 83, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 89, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 .single-image {
   width: 540px;
   height: 350px;
   background-size: cover; }
 
-/* line 89, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 95, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+.singleInfo {
+  width: 540px; }
+
+/* line 99, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 #single-main {
   display: inline-block; }
 
-/* line 93, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 103, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 #sideDivMain {
   display: flex;
   float: right;
   margin-top: 5%;
   margin-right: 15%; }
 
-/* line 100, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 110, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 .side-container {
+  word-wrap: break-word;
   list-style-type: none; }
 
-/* line 104, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 115, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 .regular {
   margin-right: 5%;
   margin-left: 5%;
@@ -106,7 +117,7 @@ a {
   color: #FFF;
   font-size: 12px; }
 
-/* line 115, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
+/* line 126, /Users/JuanJo/Desktop/DevLeague/express-gallery/scss/styles.scss */
 .big {
   margin-right: 5%;
   margin-left: 13%;
