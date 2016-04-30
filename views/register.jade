@@ -2,11 +2,8 @@ extends ./layouts/main
 
 block content
   form(method="POST", action="/register")
-    div(class="register")
-      p Username
-      input(name='username', placeholder='...', style='width: 500px', required autofocus)
-      p Password
-      input(name='password', type='password', placeholder='...', style='width: 500px' required)
-      P Confirm Password
-      input(name='password2', type='password', placeholder='...', style='width: 500px' required)
-      button.regBtn Register
+    input(name='username', placeholder='username', required autofocus)
+    input(name='password', type='password', placeholder='password' required)
+    input(name='password2', type='password', placeholder='password' required)
+    button.big Register
+
