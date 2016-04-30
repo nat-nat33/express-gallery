@@ -1,7 +1,9 @@
 var express = require('express');
 var app = express();
+
 var bodyParser = require('body-parser');
 var bcrypt = require('bcrypt');
+var flash = require('connect-flash');
 
 var db = require('./models');
 var User = db.User;
@@ -27,13 +29,13 @@ app.use(session({
 app.use(express.static('./public'));
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(flash());
 
 passport.use(new localStrategy(function (username, password, done) {
   User.findOne({where: {username: username}})
   .then(function (user) {
     if(!user) {
-      return done(null, false);
+      return done(null, false, {message: "User not found"});
     }
     bcrypt.compare(password, user.password, function (err, res) {
       if(res === true) {

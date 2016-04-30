@@ -8,3 +8,5 @@ block content
       p Password
       input(name="password", type="password", placeholder="...", style='width: 500px')
       button.loginBtn Login
+  if (errorMessage)
+    p= errorMessage
