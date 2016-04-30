@@ -2,7 +2,11 @@ extends ./layouts/main
 
 block content
   form(method="POST", action="/gallery/")
-    input(name ='link', placeholder='Image link')
-    input(name='author', placeholder='author')
-    input(name ='description', placeholder='Image description', type='text')
-    button POST
+    div(class="register")
+      p Link
+      input(name ='link', placeholder='...', style="width: 500px")
+      p Author
+      input(name='author', placeholder='...', style="width: 500px")
+      p Description
+      input(name ='description', placeholder='...', type='text', style="width: 500px")
+      button.postBtn POST

@@ -2,8 +2,9 @@ extends ./layouts/main
 
 block content
   form(method="POST", action="/login")
-    p Login
-    input(name="username", placeholder="...")
-    p Password
-    input(name="password", type="password", placeholder="...")
-    button Login
+    div(class="register")
+      p Login
+      input(name="username", placeholder="...", style='width: 500px')
+      p Password
+      input(name="password", type="password", placeholder="...", style='width: 500px')
+      button.loginBtn Login
