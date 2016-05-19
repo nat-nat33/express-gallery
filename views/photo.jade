@@ -1,9 +1,5 @@
 extends ./layouts/main
 
-block title
-  title
-    |Photo
-
 block content
   div.singlePhoto
     div(id="single-main")
@@ -13,7 +9,28 @@ block content
           img(class="single-image" id="#{photo.id}" src="#{photo.link}")
           p.singleInfo #{photo.link}
           p.singleInfo #{photo.description}
-      button.big EDIT
+      button(class="big" id="editButton" onclick="divShow()") EDIT
+
+      div(id="hiddenEdit")
+        div(id="editStuff")
+          form(id="editForm", method="POST", action="/gallery/#{photo.id}?_method=PUT")
+            label Image Author
+            br
+            input(class="editInputs", value='#{photo.author}', name='author')
+            br
+            label Image Link
+            br
+            input(class="editInputs", value= '#{photo.link}', name ='link')
+            br
+            label Image Description
+            br
+            input(class="editInputs", type='text', value='#{photo.description}', name ='description', placeholder='#{photo.description}')
+            br
+            button.save SAVE
+
+        div(id="deleteStuff")
+          form(id="deleteForm", method= "DELETE", action="/gallery/#{photo.id}?_method=DELETE")
+            button.delete DELETE
 
     div(id="sideDivMain")
       ul.side-container

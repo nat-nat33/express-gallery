@@ -62,6 +62,13 @@ app.use('/gallery', galleryRouter);
 app.use('/login', loginRoute);
 app.use('/register', registerRoute);
 
+app.get('/logout', function(req, res){
+  console.log('here', req.user);
+  req.logout();
+  console.log('poop');
+  res.redirect('/login');
+});
+
 app.get(/\/(gallery)?/, function (req, res) {
   Gallery.findAll()
   .then(function (gallery) {
@@ -83,11 +90,6 @@ function isAuthenticated(req, res, next){
 
 app.get('/gallery', isAuthenticated, function(req, res){
   res.render('gallery');
-});
-
-app.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/login');
 });
 
 db.sequelize.sync().then(function () {

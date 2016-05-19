@@ -3,6 +3,7 @@ $title: #777;
 $clicks: 3399FF;
 $font: Helvetica;
 $button: #008CBA;
+
 html
 body {
   background-color: $color;
@@ -10,6 +11,7 @@ body {
   margin: 0 auto;
   color: $title;
 }
+
 #headerContainer{
   color: $title;
   font-family: $font;
@@ -18,21 +20,34 @@ body {
   margin-right: 15%;
   margin-top: 5%;
 }
+
 #header-col-left{
   text-align: left;
 }
+
 #header-col-right{
   margin-left: 20%;
   text-align: right;
   font-size: 12px;
 }
+
 .title {
   font-size: 70px;
 }
+
 #navbar{
   margin-left: 10%;
   margin-right: 10%;
 }
+
+.loginDiv{
+  margin-left: 10%;
+}
+
+.postDiv{
+  margin-left: 10%;
+}
+
 .flex-container{
   list-style-type: none;
   display: flex;
@@ -40,29 +55,42 @@ body {
   margin-left: 10%;
   margin-right: 10%;
 }
+
 .flex-item {
   padding: 12px;
 }
+
 .gallery-images {
   width:  250px;
   height: 250px;
   background-size: cover;
 }
+
 .photo-container {
   margin-bottom: 20px;
 }
+
 p{
   word-wrap: break-word;
   width: 250px;
 }
+
 a{
   text-decoration: none;
   color: $title;
 }
 
-#navLink{
-  width: 0;
-  height: 0;
+#hiddenEdit{
+  display: none;
+  flex-flow: row wrap;
+  margin-left: 17%;
+}
+
+.editInputs{
+  width: 540px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
 }
 
 .single-list{
@@ -73,6 +101,7 @@ a{
   margin-left: 10%;
   margin-right: 10%;
 }
+
 .single-image{
   width: 540px;
   height: 350px;
@@ -86,16 +115,52 @@ a{
 #single-main{
   display: inline-block;
 }
+
 #sideDivMain{
   display: flex;
   float: right;
   margin-top: 5%;
   margin-right:15%;
 }
+
 .side-container{
   word-wrap: break-word;
   list-style-type: none;
 }
+
+.save{
+  margin-top: 8%;
+  margin-bottom: 8%;
+  height: 45px;
+  width: 85px;
+  background-color: #43AC6A;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 0;
+  color: #FFF;
+  font-size: 15px;
+}
+
+.save:hover{
+  background-color: #368a55;
+}
+
+.delete{
+  margin-bottom: 8%;
+  height: 45px;
+  width: 85px;
+  background-color: #f04124;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 0;
+  color: #FFF;
+  font-size: 15px;
+}
+
+.delete:hover{
+  background-color: #cf2a0e;
+}
+
 .regular{
   margin-right: 5%;
   margin-left: 5%;
@@ -106,9 +171,11 @@ a{
   color: #FFF;
   font-size: 12px;
 }
+
 .big{
   margin-right: 5%;
-  margin-left: 13%;
+  margin-left: 17%;
+  margin-bottom: 8%;
   height: 45px;
   width: 85px;
   background-color: $button;

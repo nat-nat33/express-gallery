@@ -12,13 +12,11 @@ router.get('/:id/edit', function (req, res){
 });
 
 router.get('/new', function (req, res) {
-  console.log('new', req.body);
   res.render('new');
 });
 
 router.route('/:id')
    .get(function (req, res) {
-    console.log("poop");
     Gallery.findAll()
     .then(function (photos) {
       var photo;
@@ -52,8 +50,15 @@ router.route('/:id')
       where: {
         id : req.params.id
       }
-    }).then(function () {
-      res.json({success: true});
+    }).then(function (photo) {
+
+      if(!photo) {
+        return next({status: 404, message: 'Photo not Found'});
+      }
+
+     res.redirect('/gallery/' + req.params.id);
+    }).catch(function (err) {
+      return next({status: 500, message: 'Error Finding Photo'});
     });
   })
   .delete(function (req, res) {
@@ -62,8 +67,13 @@ router.route('/:id')
       where: {
         id: req.params.id
       }
-    }).then(function () {
-      res.json({success: true, redirect: '/gallery'});
+    }).then(function (photo) {
+      if(!photo) {
+        return next({status: 404, message: 'Photo not Found'});
+      }
+      return res.redirect('/gallery');
+    }).catch(function (err) {
+      return next({status: 500, message: 'Error Finding Photo'});
     });
   });
 

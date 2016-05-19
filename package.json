@@ -31,6 +31,7 @@
   "devDependencies": {
     "bcrypt": "^0.8.6",
     "browser-sync": "^2.12.5",
+    "connect-flash": "^0.1.1",
     "gulp-connect": "^3.2.3",
     "gulp-nodemon": "^2.0.6",
     "gulp-sass": "^2.3.1"

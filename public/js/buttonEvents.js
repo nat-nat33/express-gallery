@@ -1,37 +1,7 @@
 var deleteButton = document.querySelector('#deleteButton');
-var editButton = document.querySelector('#editButton');
+var editButton = document.getElementById('editButton');
 
-deleteButton.addEventListener('click', deleteButtonClick);
-editButton.addEventListener('click', editButtonClick);
-
-function deleteButtonClick(event) {
-  evt.preventDefault();
-  var xhr = new XMLHttpRequest();
-  xhr.addEventListener('load', deletePhoto);
-  xhr.open('DELETE', this.href);
-  xhr.send();
+function divShow (event) {
+  editButton.style.display = 'none';
+  document.getElementById('hiddenEdit').style.display = 'flex';
 }
-
-function editButtonClick(event) {
-  evt.preventDefault();
-  var xhr = new XMLHttpRequest();
-  xhr.addEventListener('load', deletePhoto);
-  xhr.open('PUT', this.href);
-  xhr.send();
-}
-
-
-function deletePhoto(event) {
-  var response = JSON.parse(this.responseText);
-  if(response.success === true) {
-    window.location.href = response.redirect;
-  }
-}
-
-function editGallery(event) {
-  var response = JSON.parse(this.responseText);
-  if(response.success === true) {
-    window.location.href = response.redirect;
-  }
-}
-

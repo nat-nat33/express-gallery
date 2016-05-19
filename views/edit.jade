@@ -1,15 +1,6 @@
-extends ./layouts/main
-
-block title
-  title Edit Gallery
-
-block content
-  h1 Gallery
-  div(id='container')
-    img(src='#{gallery.link}')
-    form(method="POST", action="/gallery/#{gallery.id}?_method=PUT")
-      input(value='#{gallery.author}', name='author', placeholder='#{gallery.author}')
-      input(placeholder='Image link', name ='link')
-      input(type='text', value='#{gallery.description}', name ='description', placeholder='#{gallery.description}')
-      button SAVE
-      button DELETE
+form(id="editForm" method="POST", action="/gallery/#{gallery.id}?_method=PUT")
+  input(value='#{gallery.author}', name='author', placeholder='#{gallery.author}')
+  input(placeholder='Image link', name ='link')
+  input(type='text', value='#{gallery.description}', name ='description', placeholder='#{gallery.description}')
+  button SAVE
+  button DELETE
